@@ -36,8 +36,8 @@ const navbar = () => {
           : "fixed w-full h-14 z-[100]"
       }
     >
-      <div className="flex justify-between items-center w-full h-full px-1 2xl:px-8">
-        <Link href="/#home" className="ml-96">
+      <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
+        <Link href="/#home" className="ml-0 lg:ml-96">
           <Image
             src="/images/ieee-1.png"
             alt="logo"
@@ -46,45 +46,45 @@ const navbar = () => {
             quality={100}
           />
         </Link>
-        <div className="mr-96">
-          <ul className="hidden items-center md:flex">
+        <div className="mr-0 lg:mr-96">
+          <ul className="hidden items-center lg:flex">
             <Link href="/#about">
-              <li className="ml-10 text-sm text-[#75787B] hover:text-[#BA0C2F] transition-colors duration-500">
+              <li className="ml-10 text-sm text-[#616264] hover:text-[#00B5E2] transition-colors duration-500">
                 About Us
               </li>
             </Link>
             <Link href="/#membership">
-              <li className="ml-10 text-sm text-[#75787B] hover:text-[#BA0C2F] transition-colors duration-500">
+              <li className="ml-10 text-sm text-[#616264] hover:text-[#00B5E2] transition-colors duration-500">
                 Membership
               </li>
             </Link>
             <Link href="/#meetingslides">
-              <li className="ml-10 text-sm text-[#75787B] hover:text-[#BA0C2F] transition-colors duration-500">
+              <li className="ml-10 text-sm text-[#616264] hover:text-[#00B5E2] transition-colors duration-500">
                 Meeting Slides
               </li>
             </Link>
             <Link href="/#magazine">
-              <li className="ml-10 text-sm text-[#75787B] hover:text-[#BA0C2F] transition-colors duration-500">
+              <li className="ml-10 text-sm text-[#616264] hover:text-[#00B5E2] transition-colors duration-500">
                 IEEE Student Magazine
               </li>
             </Link>
             <Link href="/#events">
-              <li className="ml-10 text-sm text-[#75787B] hover:text-[#BA0C2F] transition-colors duration-500">
+              <li className="ml-10 text-sm text-[#616264] hover:text-[#00B5E2] transition-colors duration-500">
                 Events
               </li>
             </Link>
             <Link href="/#links">
-              <li className="ml-10 text-sm text-[#75787B] hover:text-[#BA0C2F] transition-colors duration-500">
+              <li className="ml-10 text-sm text-[#616264] hover:text-[#00B5E2] transition-colors duration-500">
                 Links
               </li>
             </Link>
             <Link href="/#officers">
-              <li className="ml-10 text-sm text-[#75787B] hover:text-[#BA0C2F] transition-colors duration-500">
+              <li className="ml-10 text-sm text-[#616264] hover:text-[#00B5E2] transition-colors duration-500">
                 Officers
               </li>
             </Link>
           </ul>
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <label className="hamburger">
               <input type="checkbox" ref={hamburgerRef} onClick={handleNav} />
               <svg viewBox="0 0 32 32">
@@ -102,52 +102,52 @@ const navbar = () => {
       <div
         className={
           nav
-            ? "md:hidden fixed right-0 top-0 w-full h-screen bg-black/70"
+            ? "lg:hidden fixed right-0 top-0 w-full h-screen bg-black/70"
             : "hidden"
         }
       >
         <div
           className={
             nav
-              ? "fixed right-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#050817] p-10 transition-transform duration-500 transform translate-x-0"
+              ? "fixed right-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#fbfbfd] p-10 transition-transform duration-500 transform translate-x-0"
               : "fixed right-[-100%] top-0 p-10 transition-transform duration-500 transform translate-x-full"
           }
         >
           <div className="flex flex-col items-center justify-center text py-4 mx-auto h-full mt-[-40px]">
             <Link href="/#about">
-              <div className="flex flex-col items-center py-4 text-[17px] text-[#75787B] hover:text-[#BA0C2F] transition-colors duration-500">
+              <div className="flex flex-col items-center py-4 text-[17px] text-[#75787B] hover:text-[#00B5E2] transition-colors duration-500">
                 About Us
               </div>
             </Link>
 
             <Link href="/#membership">
-              <div className="flex flex-col items-center py-4 text-[17px] text-[#75787B] hover:text-[#BA0C2F] transition-colors duration-500">
+              <div className="flex flex-col items-center py-4 text-[17px] text-[#75787B] hover:text-[#00B5E2] transition-colors duration-500">
                 Membership
               </div>
             </Link>
 
             <Link href="/#meetingslides">
-              <div className="flex flex-col items-center py-4 text-[17px] text-[#75787B] hover:text-[#BA0C2F] transition-colors duration-500">
+              <div className="flex flex-col items-center py-4 text-[17px] text-[#75787B] hover:text-[#00B5E2] transition-colors duration-500">
                 Meeting Slides
               </div>
             </Link>
             <Link href="/#magazine">
-              <div className="flex flex-col items-center py-4 text-[17px] text-[#75787B] hover:text-[#BA0C2F] transition-colors duration-500">
+              <div className="flex flex-col items-center py-4 text-[17px] text-[#75787B] hover:text-[#00B5E2] transition-colors duration-500">
                 IEEE Student Magazine
               </div>
             </Link>
             <Link href="/#events">
-              <div className="flex flex-col items-center py-4 text-[17px] text-[#75787B] hover:text-[#BA0C2F] transition-colors duration-500">
+              <div className="flex flex-col items-center py-4 text-[17px] text-[#75787B] hover:text-[#00B5E2] transition-colors duration-500">
                 Events
               </div>
             </Link>
             <Link href="/#links">
-              <div className="flex flex-col items-center py-4 text-[17px] text-[#75787B] hover:text-[#BA0C2F] transition-colors duration-500">
+              <div className="flex flex-col items-center py-4 text-[17px] text-[#75787B] hover:text-[#00B5E2] transition-colors duration-500">
                 Links
               </div>
             </Link>
             <Link href="/#officers">
-              <div className="flex flex-col items-center py-4 text-[17px] text-[#75787B] hover:text-[#BA0C2F] transition-colors duration-500">
+              <div className="flex flex-col items-center py-4 text-[17px] text-[#75787B] hover:text-[#00B5E2] transition-colors duration-500">
                 Officers
               </div>
             </Link>
