@@ -1,51 +1,161 @@
-import React from 'react'
+"use client";
+import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import "../globals.css";
 
-const Navbar = () => {
+const navbar = () => {
+  const [nav, setNav] = useState(false);
+  const [shadow, setShadow] = useState(false);
+  const hamburgerRef = useRef(null);
+
+  const handleNav = () => {
+    setNav(!nav);
+    if (hamburgerRef.current) {
+      hamburgerRef.current.checked = !nav;
+    }
+  };
+
+  useEffect(() => {
+    const changeShadow = () => {
+      if (window.scrollY >= 90) {
+        setShadow(true);
+      } else {
+        setShadow(false);
+      }
+    };
+
+    window.addEventListener("scroll", changeShadow);
+  }, []);
+
   return (
-    <div className="navbar z-[100] fixed bg-[#2c2e3a] backdrop-filter backdrop-blur-xl bg-opacity-70 top-5 left-0 right-0 w-[380px] md:w-[600px] lg:w-[1000px] mx-auto rounded-lg shadow-md">
-    {/* Navbar for Mobile Screens */}
-    <div className="navbar-start">
-      <div className="dropdown">
-        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+    <div
+      className={
+        shadow
+          ? "fixed w-full h-14 z-[100] bg-[#fbfbfd] backdrop-filter border-b-2 border-b-[#d6d6d6] backdrop-blur-lg bg-opacity-50 transition-shadow duration-500"
+          : "fixed w-full h-14 z-[100]"
+      }
+    >
+      <div className="flex justify-between items-center w-full h-full px-1 2xl:px-8">
+        <Link href="/#home" className="ml-96">
+          <Image
+            src="/images/ieee-1.png"
+            alt="logo"
+            width={115}
+            height={115}
+            quality={100}
+          />
+        </Link>
+        <div className="mr-96">
+          <ul className="hidden items-center md:flex">
+            <Link href="/#about">
+              <li className="ml-10 text-sm text-[#75787B] hover:text-[#BA0C2F] transition-colors duration-500">
+                About Us
+              </li>
+            </Link>
+            <Link href="/#membership">
+              <li className="ml-10 text-sm text-[#75787B] hover:text-[#BA0C2F] transition-colors duration-500">
+                Membership
+              </li>
+            </Link>
+            <Link href="/#meetingslides">
+              <li className="ml-10 text-sm text-[#75787B] hover:text-[#BA0C2F] transition-colors duration-500">
+                Meeting Slides
+              </li>
+            </Link>
+            <Link href="/#magazine">
+              <li className="ml-10 text-sm text-[#75787B] hover:text-[#BA0C2F] transition-colors duration-500">
+                IEEE Student Magazine
+              </li>
+            </Link>
+            <Link href="/#events">
+              <li className="ml-10 text-sm text-[#75787B] hover:text-[#BA0C2F] transition-colors duration-500">
+                Events
+              </li>
+            </Link>
+            <Link href="/#links">
+              <li className="ml-10 text-sm text-[#75787B] hover:text-[#BA0C2F] transition-colors duration-500">
+                Links
+              </li>
+            </Link>
+            <Link href="/#officers">
+              <li className="ml-10 text-sm text-[#75787B] hover:text-[#BA0C2F] transition-colors duration-500">
+                Officers
+              </li>
+            </Link>
+          </ul>
+          <div className="md:hidden">
+            <label className="hamburger">
+              <input type="checkbox" ref={hamburgerRef} onClick={handleNav} />
+              <svg viewBox="0 0 32 32">
+                <path
+                  className="line line-top-bottom"
+                  d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+                ></path>
+                <path className="line" d="M7 16 27 16"></path>
+              </svg>
+            </label>
+          </div>
         </div>
-        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-          <li><a>About Us</a></li>
-          <li>
-            <a href="">Membership</a>
-          </li>
-          <li><a>Meeting Slides</a></li>
-          <li><a>IEEE Student Magazine</a></li>
-          <li><a>Events</a></li>
-          <li><a>Links</a></li>
-          <li><a>Officers</a></li>
-        </ul>
       </div>
-      <a className=''>
-        <img src='/images/ieee-1.png' 
-        width={120}
-        height={120}
-        className='rounded-md'
-        />
-        
-      </a>
-    </div>
-    {/* Navbar for Computer Screens */}
-    <div className="navbar-center hidden lg:flex">
-      <ul className="menu menu-horizontal px-1">
-      <li className='text-xs hover:text-[#66FCF1]'><a>About Us</a></li>
-          <li className='text-xs hover:text-[#66FCF1]'>
-            <a href="">Membership</a>
-          </li>
-          <li className='text-xs hover:text-[#66FCF1]'><a>Meeting Slides</a></li>
-          <li className='text-xs hover:text-[#66FCF1]'><a>IEEE Student Magazine</a></li>
-          <li className='text-xs hover:text-[#66FCF1]'><a>Events</a></li>
-          <li className='text-xs hover:text-[#66FCF1]'><a>Links</a></li>
-          <li className='text-xs hover:text-[#66FCF1]'><a>Officers</a></li>
-      </ul>
-    </div>
-  </div>
-  )
-}
 
-export default Navbar
+      <div
+        className={
+          nav
+            ? "md:hidden fixed right-0 top-0 w-full h-screen bg-black/70"
+            : "hidden"
+        }
+      >
+        <div
+          className={
+            nav
+              ? "fixed right-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#050817] p-10 transition-transform duration-500 transform translate-x-0"
+              : "fixed right-[-100%] top-0 p-10 transition-transform duration-500 transform translate-x-full"
+          }
+        >
+          <div className="flex flex-col items-center justify-center text py-4 mx-auto h-full mt-[-40px]">
+            <Link href="/#about">
+              <div className="flex flex-col items-center py-4 text-[17px] text-[#75787B] hover:text-[#BA0C2F] transition-colors duration-500">
+                About Us
+              </div>
+            </Link>
+
+            <Link href="/#membership">
+              <div className="flex flex-col items-center py-4 text-[17px] text-[#75787B] hover:text-[#BA0C2F] transition-colors duration-500">
+                Membership
+              </div>
+            </Link>
+
+            <Link href="/#meetingslides">
+              <div className="flex flex-col items-center py-4 text-[17px] text-[#75787B] hover:text-[#BA0C2F] transition-colors duration-500">
+                Meeting Slides
+              </div>
+            </Link>
+            <Link href="/#magazine">
+              <div className="flex flex-col items-center py-4 text-[17px] text-[#75787B] hover:text-[#BA0C2F] transition-colors duration-500">
+                IEEE Student Magazine
+              </div>
+            </Link>
+            <Link href="/#events">
+              <div className="flex flex-col items-center py-4 text-[17px] text-[#75787B] hover:text-[#BA0C2F] transition-colors duration-500">
+                Events
+              </div>
+            </Link>
+            <Link href="/#links">
+              <div className="flex flex-col items-center py-4 text-[17px] text-[#75787B] hover:text-[#BA0C2F] transition-colors duration-500">
+                Links
+              </div>
+            </Link>
+            <Link href="/#officers">
+              <div className="flex flex-col items-center py-4 text-[17px] text-[#75787B] hover:text-[#BA0C2F] transition-colors duration-500">
+                Officers
+              </div>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default navbar;
