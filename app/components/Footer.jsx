@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <div className="w-full h-full mx-auto flex justify-center items-center">
-      <div className="max-w-[720px]">
+      <div className="max-w-[720px] mt-44">
         <p>
           "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
           accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae

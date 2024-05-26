@@ -12,6 +12,7 @@ export const metadata = {
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
+import Pictures from "./components/pictures";
 
 export default function RootLayout({ children }) {
   return (
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Navbar />
         <Main />
+        <Pictures />
         <Footer />
 
         {children}
