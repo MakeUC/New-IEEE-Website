@@ -35,7 +35,7 @@ const navbar = () => {
   return (
     <>
       <div className="top-0 left-0 w-full h-8 bg-[#1c1c1c] justify-end z-[101] flex items-center">
-        <ul className="flex space-x-4 md:mr-[2rem] lg:mr-[28rem]">
+        <ul className="flex space-x-4 md:mr-2 lg:mr-4">
           <a href="https://x.com/UC_IEEE" target="_blank">
             <li>
               <FaXTwitter
@@ -82,7 +82,7 @@ const navbar = () => {
         }
       >
         <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
-          <Link href="/#home" className="ml-0 lg:ml-96">
+          <Link href="/#home" className="ml-0 md:ml-4">
             <Image
               src="/images/ieee-1.png"
               alt="logo"
@@ -91,7 +91,7 @@ const navbar = () => {
               quality={100}
             />
           </Link>
-          <div className="mr-0 lg:mr-96">
+          <div className="mr-0 md:mr-6">
             <ul className="hidden items-center md:flex">
               <Link href="/#about">
                 <li className="ml-10 text-xs text-[#616264] hover:text-[#1c1c1c] transition-colors duration-500">
