@@ -284,3 +284,8 @@ html {
 .text {
   margin: 0 1.5em
 }
+
+.backdrop2 {
+  backdrop-filter: saturate(180%) blur(20px);
+  background: var(--localnav-background-stuck, rgba(251,251,253,0.8));
+}
